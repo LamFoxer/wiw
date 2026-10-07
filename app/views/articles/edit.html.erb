@@ -1,0 +1,13 @@
+<h1>Редактировать статью</h1>
+
+<%= render "form", article: @article %>
+
+<h2>Блоки статьи</h2>
+
+<% @article.blocks.each do |block| %>
+  <%= render "blocks/block", block: block %>
+<% end %>
+
+<h2>Добавить блок</h2>
+
+<%= render "blocks/form", article: @article, block: @article.blocks.build %>

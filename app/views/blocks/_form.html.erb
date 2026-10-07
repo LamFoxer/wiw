@@ -1,0 +1,23 @@
+<%= form_with model: [article, block] do |form| %>
+  <div>
+    <%= form.label :kind, "Тип блока" %>
+    <%= form.select :kind, ["text", "image", "image_text", "gallery", "video"] %>
+  </div>
+
+  <div>
+    <%= form.label :body, "Текст" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.label :caption, "Подпись" %>
+    <%= form.text_field :caption %>
+  </div>
+
+  <div>
+    <%= form.label :video_url, "Ссылка на видео" %>
+    <%= form.text_field :video_url %>
+  </div>
+
+  <%= form.submit "Сохранить блок" %>
+<% end %>

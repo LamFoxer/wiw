@@ -1,0 +1,9 @@
+<div class="block-editor">
+  <h3>Блок #<%= block.id %></h3>
+
+  <%= render "form", article: block.article, block: block %>
+
+  <%= button_to "Удалить блок",
+        [block.article, block],
+        method: :delete %>
+</div>

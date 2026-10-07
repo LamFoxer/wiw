@@ -1,0 +1,9 @@
+<div class="block block-image">
+    <% if block.images.attached? %>
+        <%= image_tag block.images.first %>
+    <% end %>
+
+    <% if block.caption.present? %>
+        <p><%= block.caption %></p>
+    <% end %>
+</div>

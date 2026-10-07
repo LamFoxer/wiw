@@ -1,0 +1,29 @@
+<h1>Материалы</h1>
+
+<section>
+  <p>Фильтры</p>
+  <button type="button">Все</button>
+  <button type="button">Мобильные интерфейсы</button>
+  <button type="button">Игровой UI</button>
+</section>
+
+<section>
+  <% @articles.each do |article| %>
+    <article>
+      <% if article.cover.attached? %>
+        <%= image_tag article.cover, alt: article.title %>
+      <% end %>
+
+      <h2>
+        <%= link_to article.title, article_path(article) %>
+      </h2>
+
+      <p><%= article.category %></p>
+
+      <% if article.published_at.present? %>
+        <p><%= article.published_at.strftime("%d.%m.%Y") %></p>
+      <% end %>
+    </article>
+  <% end %>
+</section>
+

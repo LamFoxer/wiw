@@ -1,0 +1,29 @@
+<h1>Главная</h1>
+
+<section>
+  <h2>Последние материалы</h2>
+
+  <div>
+    <% @latest_articles.each do |article| %>
+      <article>
+        <h3>
+          <%= link_to article.title, article_path(article) %>
+        </h3>
+
+        <p><%= article.category %></p>
+
+        <% if article.published_at.present? %>
+          <p><%= article.published_at.strftime("%d.%m.%Y") %></p>
+        <% end %>
+      </article>
+    <% end %>
+  </div>
+</section>
+
+<section>
+  <h2>Рубрики</h2>
+
+  <% @categories.each do |category| %>
+    <p><%= category %></p>
+  <% end %>
+</section>

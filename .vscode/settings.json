@@ -1,0 +1,11 @@
+{
+  "[ruby]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[erb]": {
+    "editor.defaultFormatter": "pedro-dalben.prettierb",
+    "editor.formatOnSave": true
+  }
+}

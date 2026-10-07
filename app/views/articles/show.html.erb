@@ -1,0 +1,22 @@
+<% if @article.cover.attached? %>
+    <%= image_tag @article.cover %>
+<% end %>
+
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p> <%# позже удалить старую структуру %>
+
+<p><%= publication_date(@article) %></p>
+
+<% @article.blocks.each do |block| %>
+    <section id="block-<%= block.id %>">
+        <%= render partial: "blocks/#{block.kind}",
+                    locals: { block: block } %>
+    </section>
+<% end %>
+
+<%= link_to "Редактировать", edit_article_path(@article) %>
+
+<%= button_to "Удалить", @article, method: :delete %>
+
+<%= link_to "Назад к статьям", articles_path %>

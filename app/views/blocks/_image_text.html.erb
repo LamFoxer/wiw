@@ -1,0 +1,8 @@
+<div class="block block-image-text">
+    <% if block.images.attached? %>
+        <%= image_tag block.images.first %>
+    <% end %>
+
+    <%= simple_format(block.body) %>
+
+</div>
